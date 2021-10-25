@@ -1,3 +1,3 @@
 # DynamicLinking
 
-This DynamicLinking project shows how to use Windows DLLs and GNU Shader libraries at runtime
+This DynamicLinking project shows how to use Windows DLLs and GNU Shared libraries at runtime
