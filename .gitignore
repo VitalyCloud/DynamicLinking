@@ -1,0 +1,12 @@
+.DS_Store
+Makefile
+*.xcworkspace
+*.xcodeproj
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
+*bin-int/
+.vs/
+imgui.ini
+bin/
