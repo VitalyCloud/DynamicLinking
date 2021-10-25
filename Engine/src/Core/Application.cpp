@@ -8,8 +8,8 @@ typedef Scene*(*CreateSceneFn)();
 
 Application::Application()
 {
-
-	HINSTANCE hInst = LoadLibrary(L"Sandbox.dll");
+	const char* dll = "Sandbox.dll";
+	HINSTANCE hInst = LoadLibraryA(dll);
 	if (!hInst) {
 		std::cout << "Failed to load library\n"; 
 		std::exit(-1);
