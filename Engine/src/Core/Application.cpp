@@ -4,12 +4,10 @@
 
 
 
-typedef Scene*(*FNPTR)();
+typedef Scene*(*CreateSceneFn)();
 
 Application::Application()
 {
-	//m_ActiveScene = new Scene();
-
 
 	HINSTANCE hInst = LoadLibrary(L"Sandbox.dll");
 	if (!hInst) {
@@ -17,13 +15,12 @@ Application::Application()
 		std::exit(-1);
 	}
 
-	FNPTR fn = (FNPTR)GetProcAddress(hInst, "CreateExampleScene");
+	CreateSceneFn fn = (CreateSceneFn)GetProcAddress(hInst, "CreateScene");
 	if (!fn)
 	{
 		std::cout << "Failed to load function\n";
 		std::exit(-1);
 	}
-
 
 	m_ActiveScene = fn();
 

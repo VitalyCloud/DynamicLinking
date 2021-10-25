@@ -2,14 +2,17 @@
 
 #include "EngineAPI.h"
 
-#define DLL_EXPORT __declspec(dllexport)
-
-class DLL_EXPORT ExampleScene: public Scene
+class ExampleScene: public Scene
 {
 public:
-	ExampleScene();
-	virtual ~ExampleScene();
+	ExampleScene() {}
+	virtual ~ExampleScene() {} 
 
-	virtual void OnUpdate() override;
+	virtual void OnUpdate() override {
+		std::cout << "ExampleScene::OnUpdate() from EXPORT_SCENE(ExampleScene)\n";
+	}
 };
+
+EXPORT_SCENE(ExampleScene)
+
 
