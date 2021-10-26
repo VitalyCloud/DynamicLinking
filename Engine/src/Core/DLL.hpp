@@ -1,5 +1,5 @@
 //
-//  LoadDLL.hpp
+//  DLL.hpp
 //  Engine
 //
 //  Created by Vitaly Cloud on 26.10.2021.
@@ -36,7 +36,7 @@ public:
         #ifdef EN_PLATFORM_MACOSX
             return dlclose(handle);
         #elif defined(EN_PLATFORM_WINDOWS)
-            return FreeLibrary(handle);
+            return FreeLibrary((HMODULE)handle);
         #else
             #error "Platform is not supported!"
         #endif
@@ -46,7 +46,7 @@ public:
         #ifdef EN_PLATFORM_MACOSX
             return dlsym(handle, name);
         #elif defined(EN_PLATFORM_WINDOWS)
-            return GetProcAddress(handle, name);
+            return GetProcAddress((HMODULE)handle, name);
         #else
             #error "Platform is not supported!"
         #endif
@@ -55,4 +55,4 @@ public:
 
 
 
-#endif /* LoadDLL_hpp */
+#endif /* DLL_hpp */
