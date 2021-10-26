@@ -11,3 +11,14 @@ workspace "DynamicLinking"
 
     include "Engine"
     include "Sandbox"
+
+rmdirs = {
+    'bin',
+    'bin-int',
+}
+
+if _ACTION == "clean" then
+    for _, dir in ipairs(rmdirs) do
+        os.rmdir(dir)
+    end
+end
