@@ -9,7 +9,7 @@ public:
 	virtual ~ExampleScene() {} 
 
 	virtual void OnUpdate() override {
-		std::cout << "ExampleScene::OnUpdate() from EXPORT_SCENE(ExampleScene)\n";
+		std::cout << "ExampleScene::OnUpdate() from macosx EXPORT_SCENE(ExampleScene)\n";
 	}
 };
 
