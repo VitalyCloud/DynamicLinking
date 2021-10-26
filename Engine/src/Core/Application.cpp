@@ -1,5 +1,5 @@
 #include "Application.h"
-#include "LoadDLL.hpp"
+#include "DLL.hpp"
 
 typedef Scene*(*CreateSceneFn)();
 
