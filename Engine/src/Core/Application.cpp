@@ -7,7 +7,6 @@ static void* dll = nullptr;
 
 Application::Application()
 {
-    m_ActiveScene = new Scene();
     
 #ifdef EN_PLATFORM_WINDOWS
     const char path[] = "Sandbox.dll";
@@ -26,7 +25,7 @@ Application::Application()
         std::exit(-1);
     }
     m_ActiveScene = fn();
-    
+
 }
 
 Application::~Application()
